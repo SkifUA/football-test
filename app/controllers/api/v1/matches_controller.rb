@@ -2,8 +2,7 @@ class Api::V1::MatchesController < ApplicationController
   include Response
   include ExceptionHandler
   def index
-    matches_parse = ParserApi.new
-    Match.update_matches(matches_parse.get_matches)
+    UpdateMatchesWorker.perform_async
     @matches = Match.all
     json_response @matches
   end
