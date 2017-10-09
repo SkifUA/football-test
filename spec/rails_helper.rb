@@ -28,6 +28,8 @@ require 'database_cleaner'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     # Choose a test framework:
@@ -48,6 +50,9 @@ end
 DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |config|
+
+  # include Helper
+  config.include RequestSpecHelper, type: :request
 
   config.include FactoryGirl::Syntax::Methods
 

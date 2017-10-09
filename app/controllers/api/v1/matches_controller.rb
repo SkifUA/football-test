@@ -9,6 +9,6 @@ class Api::V1::MatchesController < ApplicationController
 
   def show
     @match = Match.find_by(match_id: params[:match_id])
-    json_response @matches
+    json_response @match
   end
 end

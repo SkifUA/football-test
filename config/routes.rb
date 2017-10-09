@@ -2,13 +2,13 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      get 'matches/index'
+      get 'matches', to: 'matches#index'
     end
   end
 
   namespace :api do
     namespace :v1 do
-      get 'matches/show'
+      get 'matches/:match_id', to: 'matches#show'
     end
   end
 
