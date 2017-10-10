@@ -48,3 +48,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'curb', '~> 0.9.4'
 gem 'sidekiq', '~> 5.0', '>= 5.0.5'
+gem 'apipie-rails', '~> 0.5.4'

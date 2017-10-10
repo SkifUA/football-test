@@ -1,5 +1,6 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
+  apipie
   namespace :api do
     namespace :v1 do
       get 'matches', to: 'matches#index'
